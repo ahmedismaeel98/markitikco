@@ -1,15 +1,149 @@
+<!DOCTYPE html>
+
 <html lang="ar" dir="rtl">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/png" href="/MARKITIX_LOGO_1.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Markitix - شركة تصميم وتسويق رقمي احترافي</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet" />
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Markitix</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700;900&display=swap" rel="stylesheet">
+
+<style>
+body{
+  margin:0;
+  font-family:'Cairo',sans-serif;
+  background:#000d1a;
+  color:white;
+  text-align:center;
+}
+
+/* NAV */
+nav{
+  position:fixed;
+  top:0;
+  width:100%;
+  padding:15px;
+  background:rgba(0,24,48,0.7);
+  backdrop-filter:blur(10px);
+  z-index:1000;
+}
+
+/* HERO */
+.hero{
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+}
+
+.logo{
+  width:130px;
+  border-radius:50%;
+  border:3px solid #FF6600;
+  box-shadow:0 0 40px #FF6600;
+  margin-bottom:20px;
+}
+
+.btn{
+  background:linear-gradient(135deg,#FF6600,#FF8C00);
+  padding:12px 30px;
+  border-radius:30px;
+  text-decoration:none;
+  color:white;
+  display:inline-block;
+  margin-top:20px;
+  transition:0.3s;
+}
+
+.btn:hover{
+  transform:scale(1.05);
+  box-shadow:0 0 25px #FF6600;
+}
+
+/* SERVICES */
+.services{
+  padding:80px 20px;
+}
+
+.cards{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+
+.card{
+  background:rgba(0,34,68,0.4);
+  margin:10px;
+  padding:20px;
+  border-radius:15px;
+  width:200px;
+  transition:0.3s;
+  border:1px solid rgba(255,102,0,0.2);
+}
+
+.card:hover{
+  transform:translateY(-10px);
+  box-shadow:0 0 20px #FF6600;
+}
+
+/* CONTACT */
+.contact{
+  padding:60px;
+}
+
+/* WHATSAPP */
+.whatsapp{
+  position:fixed;
+  bottom:20px;
+  left:20px;
+  background:#25D366;
+  width:60px;
+  height:60px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:white;
+  font-size:25px;
+}
+</style>
+
+</head>
+
+<body>
+
+<nav>Markitix</nav>
+
+<section class="hero">
+<img src="logo.png" class="logo">
+<h1>Markitix</h1>
+<p>شركة تصميم وتسويق رقمي احترافي</p>
+<a href="#contact" class="btn">تواصل معنا</a>
+</section>
+
+<section class="services">
+<h2>خدماتنا</h2>
+
+<div class="cards">
+<div class="card">تصميم جرافيك</div>
+<div class="card">هوية بصرية</div>
+<div class="card">تصميم مواقع</div>
+<div class="card">تسويق رقمي</div>
+<div class="card">تصميم شعارات</div>
+<div class="card">صناعة محتوى</div>
+</div>
+
+</section>
+
+<section id="contact" class="contact">
+<h2>تواصل معنا</h2>
+<p>📞 009647703718200</p>
+<p>📧 info@markitixco.com</p>
+<p>📍 تكريت - العراق</p>
+</section>
+
+<a href="https://wa.me/9647703718200" class="whatsapp">💬</a>
+
+</body>
 </html>
