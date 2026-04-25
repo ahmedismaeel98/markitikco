@@ -1,11 +1,122 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <title>Markitix</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Markitix</title>
+
+<style>
+body {
+  margin:0;
+  font-family: Arial;
+  background:#0f172a;
+  color:white;
+}
+
+header {
+  padding:20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.logo {
+  font-size:22px;
+  font-weight:bold;
+}
+
+nav a {
+  margin:0 10px;
+  color:white;
+  text-decoration:none;
+}
+
+.hero {
+  text-align:center;
+  padding:100px 20px;
+}
+
+.hero h1 {
+  font-size:40px;
+}
+
+.btn {
+  display:inline-block;
+  margin-top:20px;
+  padding:12px 25px;
+  background:#22c55e;
+  color:white;
+  border-radius:6px;
+  text-decoration:none;
+}
+
+.section {
+  padding:60px 20px;
+  text-align:center;
+}
+
+.services {
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  flex-wrap:wrap;
+}
+
+.card {
+  background:#1e293b;
+  padding:20px;
+  border-radius:10px;
+  width:250px;
+}
+
+footer {
+  text-align:center;
+  padding:20px;
+  background:#020617;
+}
+</style>
 </head>
-<body style="text-align:center; font-family:sans-serif;">
-  <h1>مرحبا بك في Markitix</h1>
-  <p>شركة تصميم وتسويق رقمي</p>
+
+<body>
+
+<header>
+<div class="logo">Markitix</div>
+<nav>
+<a href="#">الرئيسية</a>
+<a href="#">الخدمات</a>
+<a href="#">الأعمال</a>
+<a href="#">تواصل</a>
+</nav>
+</header>
+
+<section class="hero">
+<h1>نحو نجاحك الرقمي</h1>
+<p>شركة متخصصة في التصميم والتسويق الرقمي</p>
+<a class="btn" href="https://wa.me/964XXXXXXXXXX">تواصل واتساب</a>
+</section>
+
+<section class="section">
+<h2>خدماتنا</h2>
+<div class="services">
+<div class="card">تصميم شعارات احترافية</div>
+<div class="card">إدارة حسابات السوشيال</div>
+<div class="card">إعلانات ممولة</div>
+</div>
+</section>
+
+<section class="section">
+<h2>أعمالنا</h2>
+<p>قريباً سيتم عرض أعمالنا</p>
+</section>
+
+<section class="section">
+<h2>تواصل معنا</h2>
+<p>رقمك / واتساب / ايميل</p>
+</section>
+
+<footer>
+© 2026 Markitix - جميع الحقوق محفوظة
+</footer>
+
 </body>
 </html>
