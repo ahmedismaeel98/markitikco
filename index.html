@@ -1,4 +1,3 @@
-}
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
@@ -7,158 +6,73 @@
 <title>Markitix</title>
 
 <style>
-{margin:0;padding:0;box-sizing:border-box;}
-
-body{
-font-family:Arial;
-background:#0f172a;
-color:white;
-overflow-x:hidden;
+body {
+  margin:0;
+  font-family: Arial;
+  background:#0f172a;
+  color:white;
 }
 
-/ NAV /
-header{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:20px 40px;
-background:#020617;
-position:sticky;
-top:0;
-z-index:999;
+header {
+  padding:20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
 }
 
-.logo{
-font-size:22px;
-font-weight:bold;
-color:#22c55e;
+.logo {
+  font-size:22px;
+  font-weight:bold;
 }
 
-nav a{
-color:white;
-margin:0 10px;
-text-decoration:none;
-position:relative;
+nav a {
+  margin:0 10px;
+  color:white;
+  text-decoration:none;
 }
 
-nav a::after{
-content:"";
-position:absolute;
-width:0;
-height:2px;
-background:#22c55e;
-bottom:-5px;
-right:0;
-transition:0.3s;
+.hero {
+  text-align:center;
+  padding:100px 20px;
 }
 
-nav a:hover::after{
-width:100%;
-left:0;
+.hero h1 {
+  font-size:40px;
 }
 
-/ HERO /
-.hero{
-height:90vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
-background:linear-gradient(135deg,#3b82f6,#06b6d4);
+.btn {
+  display:inline-block;
+  margin-top:20px;
+  padding:12px 25px;
+  background:#22c55e;
+  color:white;
+  border-radius:6px;
+  text-decoration:none;
 }
 
-.hero h1{
-font-size:45px;
-opacity:0;
-transform:translateY(50px);
-transition:1s;
+.section {
+  padding:60px 20px;
+  text-align:center;
 }
 
-.hero p{
-opacity:0;
-transform:translateY(50px);
-transition:1.5s;
+.services {
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  flex-wrap:wrap;
 }
 
-.hero.show h1,
-.hero.show p{
-opacity:1;
-transform:translateY(0);
+.card {
+  background:#1e293b;
+  padding:20px;
+  border-radius:10px;
+  width:250px;
 }
 
-.btn{
-background:#22c55e;
-padding:12px 25px;
-border-radius:6px;
-color:white;
-text-decoration:none;
-margin-top:20px;
-transition:0.3s;
-}
-
-.btn:hover{
-background:#16a34a;
-}
-
-/ SECTIONS /
-.section{
-padding:80px 20px;
-text-align:center;
-opacity:0;
-transform:translateY(50px);
-transition:1s;
-}
-
-.section.show{
-opacity:1;
-transform:translateY(0);
-}
-
-.services{
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
-gap:20px;
-margin-top:30px;
-}
-
-.card{
-background:#1e293b;
-padding:20px;
-border-radius:10px;
-width:250px;
-transition:0.3s;
-}
-
-.card:hover{
-transform:translateY(-10px) scale(1.05);
-}
-
-/ WhatsApp Floating /
-.whatsapp{
-position:fixed;
-bottom:20px;
-left:20px;
-background:#25D366;
-color:white;
-padding:15px;
-border-radius:50%;
-font-size:22px;
-text-decoration:none;
-box-shadow:0 0 10px rgba(0,0,0,0.3);
-transition:0.3s;
-}
-
-.whatsapp:hover{
-transform:scale(1.1);
-}
-
-/ Footer /
-footer{
-background:#020617;
-padding:20px;
-text-align:center;
+footer {
+  text-align:center;
+  padding:20px;
+  background:#020617;
 }
 </style>
 </head>
@@ -175,9 +89,9 @@ text-align:center;
 </nav>
 </header>
 
-<section class="hero" id="hero">
-<h1>نقود نجاحك الرقمي</h1>
-<p>شركة تصميم وتسويق رقمي احترافية</p>
+<section class="hero">
+<h1>نحو نجاحك الرقمي</h1>
+<p>شركة متخصصة في التصميم والتسويق الرقمي</p>
 <a class="btn" href="https://wa.me/964XXXXXXXXXX">تواصل واتساب</a>
 </section>
 
@@ -185,7 +99,7 @@ text-align:center;
 <h2>خدماتنا</h2>
 <div class="services">
 <div class="card">تصميم شعارات احترافية</div>
-<div class="card">إدارة حسابات التواصل</div>
+<div class="card">إدارة حسابات السوشيال</div>
 <div class="card">إعلانات ممولة</div>
 </div>
 </section>
@@ -197,37 +111,12 @@ text-align:center;
 
 <section class="section">
 <h2>تواصل معنا</h2>
-<p>077XXXXXXX</p>
+<p>رقمك / واتساب / ايميل</p>
 </section>
 
 <footer>
-<p>© 2026 Markitix</p>
+© 2026 Markitix - جميع الحقوق محفوظة
 </footer>
 
-<!-- زر واتساب عائم -->
-<a class="whatsapp" href="https://wa.me/964XXXXXXXXXX">💬</a>
-
-<script>
-/ Animation on scroll /
-const sections = document.querySelectorAll(".section");
-const hero = document.querySelector(".hero");
-
-window.addEventListener("scroll", () => {
-  const trigger = window.innerHeight * 0.85;
-
-  sections.forEach(sec => {
-    const top = sec.getBoundingClientRect().top;
-    if(top < trigger){
-      sec.classList.add("show");
-    }
-  });
-});
-
-/ Hero animation */
-window.onload = () => {
-  hero.classList.add("show");
-};
-</script>
-
 </body>
-</htm
+</html>
