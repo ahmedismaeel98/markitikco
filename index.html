@@ -1,16 +1,180 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="ar" dir="rtl">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/png" href="/MARKITIX_LOGO_1.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Markitix - شركة تصميم وتسويق رقمي احترافي</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet" />
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Markitix</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;800&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+
+<style>
+body {
+  font-family: 'Cairo', sans-serif;
+  background: #000d1a;
+  color: white;
+  overflow-x: hidden;
+}
+
+/* Navbar */
+nav {
+  backdrop-filter: blur(10px);
+}
+
+/* Glow */
+.glow {
+  box-shadow: 0 0 25px rgba(255,102,0,0.5);
+}
+
+/* Button */
+.btn {
+  background: linear-gradient(135deg,#FF6600,#FF8C00);
+  transition: 0.3s;
+}
+.btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px rgba(255,102,0,0.8);
+}
+
+/* Cards */
+.card {
+  background: rgba(0,34,68,0.4);
+  border: 1px solid rgba(255,102,0,0.2);
+  backdrop-filter: blur(10px);
+  transition: 0.3s;
+}
+.card:hover {
+  transform: translateY(-8px);
+  border: 1px solid #FF6600;
+  box-shadow: 0 0 30px rgba(255,102,0,0.3);
+}
+
+/* Particles */
+canvas {
+  position: fixed;
+  top:0;
+  left:0;
+  z-index:0;
+}
+.content {
+  position: relative;
+  z-index: 10;
+}
+</style>
+
+</head>
+
+<body>
+
+<canvas id="particles"></canvas>
+
+<div class="content">
+
+<!-- NAVBAR -->
+
+<nav class="fixed w-full top-0 flex justify-between items-center px-6 py-4 bg-[#001830]/70 z-50">
+  <img src="logo.png" class="h-10">
+  <div class="hidden md:flex gap-8 text-sm">
+    <a href="#hero">الرئيسية</a>
+    <a href="#services">خدماتنا</a>
+    <a href="#contact">تواصل معنا</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+
+<section id="hero" class="min-h-screen flex flex-col items-center justify-center text-center px-6">
+
+<div class="mb-8 glow rounded-full p-2">
+  <img src="logo.png" class="w-32">
+</div>
+
+<h1 class="text-6xl font-black mb-4">Markitix</h1>
+
+<p class="text-orange-500 text-xl mb-3">
+شركة تصميم وتسويق رقمي احترافي
+</p>
+
+<p class="text-gray-400 mb-6">
+نحو هوية بصرية مميزة وتجارب رقمية لا تُنسى
+</p>
+
+<a href="#contact" class="btn px-8 py-3 rounded-full">
+تواصل معنا الآن
+</a>
+
+</section>
+
+<!-- SERVICES -->
+
+<section id="services" class="py-20 px-6 text-center">
+
+<h2 class="text-3xl font-bold mb-10">خدماتنا</h2>
+
+<div class="grid md:grid-cols-3 gap-6">
+
+<div class="card p-6 rounded-xl">🎥 صناعة محتوى</div>
+<div class="card p-6 rounded-xl">✏️ تصميم شعارات</div>
+<div class="card p-6 rounded-xl">📣 تسويق رقمي</div>
+<div class="card p-6 rounded-xl">💻 تصميم مواقع</div>
+<div class="card p-6 rounded-xl">🧬 هوية بصرية</div>
+<div class="card p-6 rounded-xl">🎨 تصميم جرافيك</div>
+
+</div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact" class="py-20 text-center">
+
+<h2 class="text-3xl mb-6">تواصل معنا</h2>
+
+<p>📍 تكريت - صلاح الدين - العراق</p>
+<p>📧 info@markitixco.com</p>
+<p>📞 009647703718200</p>
+
+</section>
+
+<!-- WHATSAPP -->
+
+<a href="https://wa.me/9647703718200"
+class="fixed bottom-6 left-6 bg-green-500 w-14 h-14 flex items-center justify-center rounded-full text-white text-xl glow">
+💬 </a>
+
+</div>
+
+<script>
+// particles
+const canvas = document.getElementById("particles");
+const ctx = canvas.getContext("2d");
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+let particles = [];
+for(let i=0;i<80;i++){
+  particles.push({
+    x: Math.random()*canvas.width,
+    y: Math.random()*canvas.height,
+    vx:(Math.random()-0.5)*0.5,
+    vy:(Math.random()-0.5)*0.5
+  });
+}
+
+function animate(){
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  particles.forEach(p=>{
+    p.x+=p.vx;
+    p.y+=p.vy;
+    ctx.fillStyle="orange";
+    ctx.fillRect(p.x,p.y,2,2);
+  });
+  requestAnimationFrame(animate);
+}
+animate();
+</script>
+
+</body>
 </html>
