@@ -5,11 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Markitix</title>
 
+<!-- FAVICON -->
+<link rel="icon" type="image/png" href="logo.png">
+
+<!-- ICONS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 <style>
 :root{
   --main:#002244;
   --orange:#FF6600;
-  --white:#ffffff;
 }
 
 *{
@@ -20,43 +25,45 @@
 }
 
 body{
-  background:linear-gradient(180deg,#002244,#00172e);
+  background: radial-gradient(circle at top,#003366,#00172e);
   color:white;
+  overflow-x:hidden;
 }
 
-/* NAVBAR */
+/* خلفية متحركة */
+body::before{
+  content:"";
+  position:fixed;
+  width:200%;
+  height:200%;
+  background:radial-gradient(circle, rgba(255,102,0,0.08) 1px, transparent 1px);
+  background-size:40px 40px;
+  animation:moveBg 20s linear infinite;
+  z-index:-1;
+}
+
+@keyframes moveBg{
+  0%{transform:translate(0,0);}
+  100%{transform:translate(-200px,-200px);}
+}
+
+/* NAV */
 nav{
   display:flex;
   justify-content:space-between;
-  align-items:center;
   padding:20px 40px;
-  background:rgba(0,0,0,0.25);
-  backdrop-filter:blur(10px);
-}
-
-nav ul{
-  display:flex;
-  gap:25px;
-  list-style:none;
-}
-
-nav ul li{
-  cursor:pointer;
-  transition:0.3s;
-}
-
-nav ul li:hover{
-  color:var(--orange);
+  align-items:center;
 }
 
 .logo{
   display:flex;
   align-items:center;
   gap:10px;
-  font-weight:bold;
 }
 
 .logo img{
+  width:40px;
+  height:40px;
   border-radius:50%;
 }
 
@@ -69,22 +76,15 @@ nav ul li:hover{
 .hero img{
   width:130px;
   margin-bottom:20px;
-  animation:float 3s infinite ease-in-out;
+  animation:float 3s infinite;
 }
 
 @keyframes float{
-  0%,100%{transform:translateY(0);}
-  50%{transform:translateY(-12px);}
+  50%{transform:translateY(-10px);}
 }
 
 .hero h1{
   font-size:60px;
-  margin-bottom:10px;
-}
-
-.hero p{
-  font-size:18px;
-  color:#ccc;
 }
 
 .hero span{
@@ -92,18 +92,18 @@ nav ul li:hover{
 }
 
 .btn{
-  display:inline-block;
   margin-top:20px;
-  padding:12px 35px;
+  display:inline-block;
+  padding:12px 30px;
   background:var(--orange);
-  color:white;
   border-radius:30px;
   text-decoration:none;
+  color:white;
   transition:0.3s;
 }
 
 .btn:hover{
-  transform:scale(1.08);
+  transform:scale(1.1);
 }
 
 /* SERVICES */
@@ -112,45 +112,35 @@ nav ul li:hover{
   text-align:center;
 }
 
-.services h2{
-  margin-bottom:30px;
-}
-
 .cards{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
   gap:20px;
+  margin-top:30px;
 }
 
 .card{
   background:#001f3d;
   padding:25px;
   border-radius:15px;
-  transition:0.3s;
+  transition:0.4s;
+}
+
+.card i{
+  font-size:35px;
+  color:var(--orange);
+  margin-bottom:15px;
 }
 
 .card:hover{
-  transform:translateY(-10px);
-  border:1px solid var(--orange);
+  transform:translateY(-12px) scale(1.03);
+  box-shadow:0 0 20px rgba(255,102,0,0.3);
 }
 
 /* CONTACT */
 .contact{
   padding:50px;
   text-align:center;
-  border-top:1px solid #333;
-}
-
-.contact p{
-  margin:10px 0;
-}
-
-/* FOOTER */
-footer{
-  text-align:center;
-  padding:15px;
-  font-size:14px;
-  color:#aaa;
 }
 
 /* WHATSAPP */
@@ -165,61 +155,66 @@ footer{
   display:flex;
   align-items:center;
   justify-content:center;
-  font-size:25px;
   color:white;
-  text-decoration:none;
-  box-shadow:0 0 10px rgba(0,0,0,0.3);
-}
-
-.whatsapp:hover{
-  transform:scale(1.1);
+  font-size:25px;
 }
 </style>
 </head>
 
 <body>
 
-<!-- NAV -->
 <nav>
   <div class="logo">
-    <img src="logo.png" width="45">
-    Markitix
+    <img src="logo.png" alt="logo">
+    <h3>Markitix</h3>
   </div>
-
-  <ul>
-    <li>الرئيسية</li>
-    <li>خدماتنا</li>
-    <li>أعمالنا</li>
-    <li>من نحن</li>
-    <li>تواصل</li>
-  </ul>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
   <img src="logo.png" alt="logo">
-
   <h1>Markitix</h1>
   <p>شركة تصميم وتسويق رقمي <span>احترافي</span></p>
-
-  <a href="https://wa.me/9647703718200" class="btn">تواصل معنا الآن</a>
+  <a href="https://wa.me/9647703718200" class="btn">تواصل معنا</a>
 </section>
 
-<!-- SERVICES -->
 <section class="services">
   <h2>خدماتنا</h2>
 
   <div class="cards">
-    <div class="card">تصميم جرافيك</div>
-    <div class="card">هوية بصرية</div>
-    <div class="card">تصميم مواقع</div>
-    <div class="card">تسويق رقمي</div>
-    <div class="card">تصميم شعارات</div>
-    <div class="card">صناعة محتوى</div>
+
+    <div class="card">
+      <i class="fa-solid fa-palette"></i>
+      <h3>تصميم جرافيك</h3>
+    </div>
+
+    <div class="card">
+      <i class="fa-solid fa-pen-nib"></i>
+      <h3>هوية بصرية</h3>
+    </div>
+
+    <div class="card">
+      <i class="fa-solid fa-code"></i>
+      <h3>تصميم مواقع</h3>
+    </div>
+
+    <div class="card">
+      <i class="fa-solid fa-bullhorn"></i>
+      <h3>تسويق رقمي</h3>
+    </div>
+
+    <div class="card">
+      <i class="fa-solid fa-pen"></i>
+      <h3>تصميم شعارات</h3>
+    </div>
+
+    <div class="card">
+      <i class="fa-solid fa-video"></i>
+      <h3>صناعة محتوى</h3>
+    </div>
+
   </div>
 </section>
 
-<!-- CONTACT -->
 <section class="contact">
   <h2>تواصل معنا</h2>
   <p>📍 تكريت - صلاح الدين</p>
@@ -227,13 +222,9 @@ footer{
   <p>📞 009647703718200</p>
 </section>
 
-<!-- FOOTER -->
-<footer>
-  © 2024 Markitix - جميع الحقوق محفوظة
-</footer>
-
-<!-- WHATSAPP -->
-<a class="whatsapp" href="https://wa.me/9647703718200">💬</a>
+<a href="https://wa.me/9647703718200" class="whatsapp">
+  <i class="fab fa-whatsapp"></i>
+</a>
 
 </body>
 </html>
