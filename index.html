@@ -6,73 +6,150 @@
 <title>Markitix</title>
 
 <style>
-body {
+:root {
+  --main:#002244;
+  --accent:#FF6600;
+  --light:#cccccc;
+}
+
+* {
   margin:0;
-  font-family: Arial;
-  background:#0f172a;
+  padding:0;
+  box-sizing:border-box;
+  scroll-behavior:smooth;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: var(--main);
   color:white;
 }
 
+/* HEADER */
 header {
-  padding:20px;
   display:flex;
   justify-content:space-between;
   align-items:center;
+  padding:20px 40px;
+  background:#001a33;
+  position:sticky;
+  top:0;
+  z-index:999;
 }
 
 .logo {
-  font-size:22px;
-  font-weight:bold;
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.logo img {
+  width:50px;
 }
 
 nav a {
-  margin:0 10px;
   color:white;
+  margin-left:20px;
   text-decoration:none;
+  transition:.3s;
 }
 
+nav a:hover {
+  color:var(--accent);
+}
+
+/* HERO */
 .hero {
   text-align:center;
-  padding:100px 20px;
+  padding:120px 20px;
+  animation:fadeIn 1.5s ease;
+}
+
+.hero img {
+  width:180px;
+  margin-bottom:20px;
 }
 
 .hero h1 {
-  font-size:40px;
+  font-size:45px;
+  margin-bottom:10px;
 }
 
-.btn {
-  display:inline-block;
-  margin-top:20px;
-  padding:12px 25px;
-  background:#22c55e;
-  color:white;
-  border-radius:6px;
-  text-decoration:none;
+.hero p {
+  color:var(--light);
+  font-size:18px;
 }
 
-.section {
-  padding:60px 20px;
+/* SERVICES */
+.services {
+  padding:80px 20px;
   text-align:center;
 }
 
-.services {
+.services h2 {
+  margin-bottom:40px;
+}
+
+.cards {
   display:flex;
+  flex-wrap:wrap;
   justify-content:center;
   gap:20px;
-  flex-wrap:wrap;
 }
 
 .card {
-  background:#1e293b;
-  padding:20px;
-  border-radius:10px;
-  width:250px;
+  background:#001a33;
+  padding:25px;
+  border-radius:12px;
+  width:260px;
+  transition:.4s;
 }
 
+.card:hover {
+  transform:translateY(-10px);
+  box-shadow:0 0 20px var(--accent);
+}
+
+/* CONTACT */
+.contact {
+  padding:80px 20px;
+  text-align:center;
+}
+
+.contact p {
+  margin:10px 0;
+}
+
+/* FOOTER */
 footer {
   text-align:center;
   padding:20px;
-  background:#020617;
+  background:#001a33;
+}
+
+/* WHATSAPP BUTTON */
+.whatsapp {
+  position:fixed;
+  bottom:20px;
+  left:20px;
+  background:#25D366;
+  color:white;
+  padding:15px 18px;
+  border-radius:50%;
+  font-size:22px;
+  text-decoration:none;
+  box-shadow:0 0 10px #000;
+  transition:.3s;
+}
+
+.whatsapp:hover {
+  transform:scale(1.1);
+}
+
+/* ANIMATION */
+@keyframes fadeIn {
+  from {opacity:0; transform:translateY(30px);}
+  to {opacity:1; transform:translateY(0);}
 }
 </style>
 </head>
@@ -80,43 +157,75 @@ footer {
 <body>
 
 <header>
-<div class="logo">Markitix</div>
-<nav>
-<a href="#">الرئيسية</a>
-<a href="#">الخدمات</a>
-<a href="#">الأعمال</a>
-<a href="#">تواصل</a>
-</nav>
+  <div class="logo">
+    <img src="logo.png" alt="logo">
+    <h2>Markitix</h2>
+  </div>
+
+  <nav>
+    <a href="#">الرئيسية</a>
+    <a href="#services">خدماتنا</a>
+    <a href="#contact">تواصل</a>
+  </nav>
 </header>
 
 <section class="hero">
-<h1>نحو نجاحك الرقمي</h1>
-<p>شركة متخصصة في التصميم والتسويق الرقمي</p>
-<a class="btn" href="https://wa.me/964XXXXXXXXXX">تواصل واتساب</a>
+  <img src="logo.png">
+  <h1>Markitix</h1>
+  <p>شركة تصميم وتسويق رقمي احترافي</p>
 </section>
 
-<section class="section">
-<h2>خدماتنا</h2>
-<div class="services">
-<div class="card">تصميم شعارات احترافية</div>
-<div class="card">إدارة حسابات السوشيال</div>
-<div class="card">إعلانات ممولة</div>
-</div>
+<section class="services" id="services">
+  <h2>خدماتنا</h2>
+
+  <div class="cards">
+    <div class="card">
+      <h3>تصميم جرافيك</h3>
+      <p>تصاميم احترافية لجميع المجالات</p>
+    </div>
+
+    <div class="card">
+      <h3>هوية بصرية</h3>
+      <p>بناء هوية كاملة لعلامتك التجارية</p>
+    </div>
+
+    <div class="card">
+      <h3>تصميم مواقع</h3>
+      <p>مواقع حديثة وسريعة</p>
+    </div>
+
+    <div class="card">
+      <h3>تسويق رقمي</h3>
+      <p>حملات إعلانية قوية</p>
+    </div>
+
+    <div class="card">
+      <h3>تصميم شعارات</h3>
+      <p>لوغوهات احترافية مميزة</p>
+    </div>
+
+    <div class="card">
+      <h3>صناعة محتوى</h3>
+      <p>إدارة وصناعة محتوى السوشيال ميديا</p>
+    </div>
+  </div>
 </section>
 
-<section class="section">
-<h2>أعمالنا</h2>
-<p>قريباً سيتم عرض أعمالنا</p>
-</section>
+<section class="contact" id="contact">
+  <h2>تواصل معنا</h2>
 
-<section class="section">
-<h2>تواصل معنا</h2>
-<p>رقمك / واتساب / ايميل</p>
+  <p>📞 009647703718200</p>
+  <p>📧 info@markitixco.com</p>
+  <p>📍 تكريت - صلاح الدين</p>
 </section>
 
 <footer>
-© 2026 Markitix - جميع الحقوق محفوظة
+  © 2026 Markitix - جميع الحقوق محفوظة
 </footer>
+
+<a class="whatsapp" href="https://wa.me/9647703718200" target="_blank">
+💬
+</a>
 
 </body>
 </html>
